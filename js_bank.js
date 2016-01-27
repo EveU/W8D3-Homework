@@ -1,6 +1,10 @@
 var Bank = function(name){
   this.name = name;
-  var accounts = [];
+  this.accounts = [];
+}
+
+Bank.prototype.addAccount = function(account){
+  this.accounts.push(account);
 }
 
 var Account = function(owner, balance, type){
@@ -8,6 +12,16 @@ var Account = function(owner, balance, type){
   this.balance = balance;
   this.type = type;
 }
+
+var account1 = new Account('Jay', 125.50, 'personal');
+var account2 = new Account('Val', 55125.10, 'business');
+var account3 = new Account('Marc', 400.00, 'personal');
+var account4 = new Account('Keith', 200.25, 'business');
+var account5 = new Account('Rick', 1.00, 'personal');
+
+var accounts = [account1, account2, account3, account4, account5];
+
+var jsBank = new Bank('JS Bank');
 
 // OO JS Bank
 
@@ -21,3 +35,5 @@ var Account = function(owner, balance, type){
 // Find the total account value.
 // Find the average value.
 // Find the total value for an account type.
+
+module.exports = [jsBank, accounts];
