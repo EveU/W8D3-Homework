@@ -7,6 +7,14 @@ Bank.prototype.addAccount = function(account){
   this.accounts.push(account);
 }
 
+Bank.prototype.findByOwner = function(owner){
+  for(account in this.accounts){
+    if(this.accounts[account]['owner'] === owner){
+      return this.accounts[account];
+    }
+  }
+}
+
 var Account = function(owner, balance, type){
   this.owner = owner;
   this.balance = balance;

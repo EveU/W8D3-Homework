@@ -9,9 +9,12 @@ describe('JS Bank', function(){
   // Add an account
   it('should be able to add an account', function(){
     jsBank.addAccount(accounts[0]);
-    assert.equal(1, jsBank.accounts.length)
+    assert.equal(1, jsBank.accounts.length);
   });
   // Find account by name owner name.
+  it('should find account by owner name', function(){
+    assert.equal(jsBank.accounts[0], jsBank.findByOwner('Jay'));
+  });
   // Find the largest account.
   // Find the total account value.
   // Find the average value.
