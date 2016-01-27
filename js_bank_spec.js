@@ -28,6 +28,9 @@ describe('JS Bank', function(){
     assert.equal(55851.85, jsBank.totalValue());
   });
   // Find the average value.
+  it('should find the average value', function(){
+    assert.equal(11170.369999999999, jsBank.averageValue());
+  });
   // Find the total value for an account type.
 });
 

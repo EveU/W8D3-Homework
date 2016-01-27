@@ -33,6 +33,10 @@ Bank.prototype.totalValue = function(){
   return total;
 }
 
+Bank.prototype.averageValue = function(){
+  return this.totalValue() / this.accounts.length;
+}
+
 var Account = function(owner, balance, type){
   this.owner = owner;
   this.balance = balance;
