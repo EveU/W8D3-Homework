@@ -25,28 +25,19 @@ Bank.prototype.largestAccount = function(){
   return result;
 }
 
-Bank.prototype.totalValue = function(){
+Bank.prototype.totalValue = function(accountType){
   total = 0;
   for(account of this.accounts){
-    total += account.balance;
-  }
-  return total;
-}
-
-Bank.prototype.averageValue = function(){
-  return this.totalValue() / this.accounts.length;
-}
-
-
-Bank.prototype.totalValueByAccType = function(accountType){
-  total = 0;
-  for(account of this.accounts){
-    if(account.type === accountType){
+    if(!accountType || account.type === accountType){
       total += account.balance;
     }
   }
   return total;
 }
+Bank.prototype.averageValue = function(){
+  return this.totalValue() / this.accounts.length;
+}
+
 
 var Account = function(owner, balance, type){
   this.owner = owner;
