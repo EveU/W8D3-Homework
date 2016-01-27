@@ -25,6 +25,14 @@ Bank.prototype.largestAccount = function(){
   return result;
 }
 
+Bank.prototype.totalValue = function(){
+  total = 0;
+  for(account of this.accounts){
+    total += account.balance;
+  }
+  return total;
+}
+
 var Account = function(owner, balance, type){
   this.owner = owner;
   this.balance = balance;

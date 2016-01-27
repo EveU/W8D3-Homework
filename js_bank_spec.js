@@ -24,6 +24,9 @@ describe('JS Bank', function(){
     assert.equal(jsBank.accounts[1], jsBank.largestAccount());
   });
   // Find the total account value.
+  it('should find the total account value', function(){
+    assert.equal(55851.85, jsBank.totalValue());
+  });
   // Find the average value.
   // Find the total value for an account type.
 });
