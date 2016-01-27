@@ -15,6 +15,16 @@ Bank.prototype.findByOwner = function(owner){
   }
 }
 
+Bank.prototype.largestAccount = function(){
+  result = this.accounts[0];
+  for(account in this.accounts){
+    if(this.accounts[account].balance > result.balance){
+      result = this.accounts[account];
+    }
+  }
+  return result;
+}
+
 var Account = function(owner, balance, type){
   this.owner = owner;
   this.balance = balance;

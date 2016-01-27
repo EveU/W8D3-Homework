@@ -16,6 +16,13 @@ describe('JS Bank', function(){
     assert.equal(jsBank.accounts[0], jsBank.findByOwner('Jay'));
   });
   // Find the largest account.
+  it('should find the largest account', function(){
+    jsBank.addAccount(accounts[1]);
+    jsBank.addAccount(accounts[2]);
+    jsBank.addAccount(accounts[3]);
+    jsBank.addAccount(accounts[4]);
+    assert.equal(jsBank.accounts[1], jsBank.largestAccount());
+  });
   // Find the total account value.
   // Find the average value.
   // Find the total value for an account type.
