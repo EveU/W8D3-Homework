@@ -37,6 +37,17 @@ Bank.prototype.averageValue = function(){
   return this.totalValue() / this.accounts.length;
 }
 
+
+Bank.prototype.totalValueByAccType = function(accountType){
+  total = 0;
+  for(account of this.accounts){
+    if(account.type === accountType){
+      total += account.balance;
+    }
+  }
+  return total;
+}
+
 var Account = function(owner, balance, type){
   this.owner = owner;
   this.balance = balance;
